@@ -3,6 +3,35 @@
 	import github from './github-logo.svg';
   import linkedin from './linkedin-logo.svg';
 	import HeaderAnchor from './HeaderAnchor.svelte';
+import { text } from 'svelte/internal';
+
+  let socials = [
+    {
+      src: github,
+      alt: "Github profile",
+      href: "https://github.com/AleksNords"
+    },
+    {
+      src: linkedin,
+      alt: "LinkedIn profile",
+      href: "https://linkedin.com/in/aleks-nordstrand-9bba08203"
+    }]
+
+  let navigationLinks = [
+    {
+      text: "About me",
+      href: "/"
+    },
+    {
+      text: "Projects",
+      href: "/"
+    },
+    {
+      text: "Contact",
+      href: "/"
+    }
+  ]
+    
 
   //TODO: Find more links to include in the header
 </script>
@@ -13,14 +42,23 @@
 			<img src={logo} alt="SvelteKit" />
 		</a>
 	</div>
-	<ul>
-		<li>
-			<HeaderAnchor src={github} alt={'Github profile'} href={'https://github.com/AleksNords'} />
-		</li>
 
-		<li>
-			<HeaderAnchor src={linkedin} alt={'LinkedIn profile'} href={'https://linkedin.com/in/aleks-nordstrand-9bba08203'} />
-		</li>
+  <nav>
+    <ul class="navigation-links-list">
+      {#each navigationLinks as { text, href }}
+        <li>
+          <a class="navigation-link" {href}>{text}</a>
+        </li>
+      {/each}
+    </ul>
+  </nav>
+
+	<ul>
+    {#each socials as { src, alt, href }}
+      <li>
+        <HeaderAnchor {src} {alt} {href}/>
+      </li>
+    {/each}
 	</ul>
 </header>
 
@@ -53,16 +91,36 @@
 		height: 3em;
 	}
 
+  .navigation-link {
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color ease-in-out 0.15s;
+  }
+
+  .navigation-link:hover {
+    color: var(--primary-color);
+  }
+
+  .navigation-links-list > li:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .navigation-links-list {
+    height: 100%;
+  }
+
 	ul {
+    padding: 0;
 		list-style-type: none;
     display: flex;
     align-items: center;
-    width: 6em;
 	}
 
 	ul > li {
 		display: inline-block;
-    align-self: center;
-    margin-left: 10px;
+    margin-right: 10px;
 	}
 </style>

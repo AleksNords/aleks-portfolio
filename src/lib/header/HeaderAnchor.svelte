@@ -16,8 +16,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px var(--primary-color) solid;
+    border: 1px var(--accent-color) solid;
     border-radius: 5px;
+    transition: border-color ease-in-out 0.15s;
+  }
+
+  a:hover {
+    border-color: var(--primary-color);
   }
 
   img {
