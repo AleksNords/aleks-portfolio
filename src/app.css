@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'League Spartan';
+  src: url('../static/fonts/LeagueSpartan-Bold.eot');
+  src: url('../static/fonts/LeagueSpartan-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../static/fonts/LeagueSpartan-Bold.svg#LeagueSpartan-Bold') format('svg'),
+       url('../static/fonts/LeagueSpartan-Bold.ttf') format('truetype'),
+       url('../static/fonts/LeagueSpartan-Bold.woff') format('woff'),
+       url('../static/fonts/LeagueSpartan-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+	font-family: 'Segoe UI', Roboto, sans-serif;
+	--pure-white: #ffffff;
+  --background-color: #131518;
+	--primary-color: #FF5722;
+  --accent-color: #FF9800;
+	--light-primary-color: #FFCCBC;
+  --dark-primary-color: #E64A19;
+	--text-color: #909296;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-color: var(--background-color);
+}
