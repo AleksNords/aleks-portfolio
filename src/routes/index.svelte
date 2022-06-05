@@ -4,7 +4,7 @@
 
   let visible = false;
 
-  onMount( ()=> {
+  onMount( () => {
     visible = true;
   })
 </script>
@@ -14,7 +14,7 @@
 	<meta name="description" content="Aleks Nordstrand portfolio" />
 </svelte:head>
 
-<h1>Hello, my name is 
+<h1>Hello, my name is
   {#if visible}
   <span transition:fade="{{duration: 700}}">
     Aleks
