@@ -3,7 +3,7 @@
 	import github from './github-logo.svg';
   import linkedin from './linkedin-logo.svg';
 	import HeaderAnchor from './HeaderAnchor.svelte';
-import { text } from 'svelte/internal';
+  import ThemeSwitch from './ThemeSwitch.svelte';
 
   let socials = [
     {
@@ -34,6 +34,7 @@ import { text } from 'svelte/internal';
     
 
   //TODO: Find more links to include in the header
+  //TODO: Center middle links, they are slightly offset to the left
 </script>
 
 <header>
@@ -53,7 +54,12 @@ import { text } from 'svelte/internal';
     </ul>
   </nav>
 
+
+  <!-- TODO: fix this, ThemeSwitch shouldn't be inside the UL-->
 	<ul>
+    <li>
+      <ThemeSwitch/>
+    </li>
     {#each socials as { src, alt, href }}
       <li>
         <HeaderAnchor {src} {alt} {href}/>
@@ -63,6 +69,7 @@ import { text } from 'svelte/internal';
 </header>
 
 <style>
+
 	* {
 		margin: 0;
 	}
@@ -70,7 +77,8 @@ import { text } from 'svelte/internal';
 	header {
 		display: flex;
     justify-content: space-between;
-		background-color: #161b22;
+		background-color: var(--header-color);
+    filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.2)); 
 	}
 
 	.corner-logo {
@@ -109,6 +117,7 @@ import { text } from 'svelte/internal';
   }
 
   .navigation-links-list {
+    justify-self: center;
     height: 100%;
   }
 

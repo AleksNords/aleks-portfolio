@@ -13,12 +13,11 @@
 :root {
 	font-family: 'Segoe UI', Roboto, sans-serif;
 	--pure-white: #ffffff;
-  --background-color: #131518;
+  --pitch-black: #000000;
 	--primary-color: #FF5722;
   --accent-color: #FF9800;
 	--light-primary-color: #FFCCBC;
   --dark-primary-color: #E64A19;
-	--text-color: #909296;
 }
 
 body {

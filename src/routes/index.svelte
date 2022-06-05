@@ -41,7 +41,7 @@
     font-family: 'League Spartan';
     font-weight: bold;
     margin: 5% 0 0 5%;
-    color: var(--pure-white);
+    color: var(--bold-text-color);
     font-size: 4em;
   }
 
