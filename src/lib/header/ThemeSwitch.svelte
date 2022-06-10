@@ -32,7 +32,6 @@ span {
 }
 
 span:before {
-  border-radius: 50%;
   position: absolute;
   content: "";
   height: 1.6em;

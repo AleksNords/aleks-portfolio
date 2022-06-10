@@ -1,12 +1,15 @@
 <script>
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
+  import Button from '../lib/Button.svelte';
 
   let visible = false;
 
   onMount( () => {
     visible = true;
   })
+
+
 </script>
 
 <svelte:head>
@@ -14,6 +17,7 @@
 	<meta name="description" content="Aleks Nordstrand portfolio" />
 </svelte:head>
 
+<section>
 <h1>Hello, my name is
   {#if visible}
   <span transition:fade="{{duration: 700}}">
@@ -21,13 +25,21 @@
   </span>
   {/if}
 </h1>
-<p>Welcome to my portfolio.</p>
+<p>I'm a 21 year old aspiring developer that loves working with frontend, backend, UX and design.</p>
+<Button class={"first-button"} text={"Get to know me"} variant={"gradient"}/>
+<Button text={"See my work"} variant={"outlined"}/>
+</section>
 
 
 <style>
 
   * {
     margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  section {
+    margin: 5%; 
   }
 
   span {
@@ -40,14 +52,17 @@
   h1 {
     font-family: 'League Spartan';
     font-weight: bold;
-    margin: 5% 0 0 5%;
     color: var(--bold-text-color);
     font-size: 4em;
   }
 
   p {
     color: var(--text-color);
-    margin-left: 5%;
+    font-size: 18px;
+  }
+
+  section :global(.first-button) {
+    margin-right: 1rem;
   }
 
   @media only screen and (max-width: 600px) {

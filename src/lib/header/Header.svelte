@@ -27,12 +27,16 @@
       href: "/"
     },
     {
+      text: "Qualifications",
+      href: "/"
+    },
+    {
       text: "Contact",
       href: "/"
     }
   ]
-    
 
+  
   //TODO: Find more links to include in the header
   //TODO: Center middle links, they are slightly offset to the left
 </script>
