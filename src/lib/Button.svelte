@@ -1,9 +1,11 @@
 <script>
   export let text;
   export let variant;
+
+  let classes = variant + " " + $$props.class;
 </script>
 
-<button class={variant + " " + $$props.class}>{text}</button>
+<button class={classes}>{text}</button>
 
 <style>
   button {
@@ -19,6 +21,7 @@
   }
 
   button.gradient {
+    color: var(--pure-white);
     background-image: linear-gradient(60deg, var(--primary-color) 3%, var(--accent-color) 97%);
     border: 0;
   }
@@ -27,12 +30,11 @@
     background-color: transparent;
     border: 2px solid var(--accent-color);
     color: var(--accent-color);
-    transition: all ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s;
   }
 
   button.outlined:hover {
     border-color: var(--primary-color);
-    color: var(--primary-color);
   }
 
   button:hover {

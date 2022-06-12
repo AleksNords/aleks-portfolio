@@ -9,7 +9,17 @@
     visible = true;
   })
 
+  function getCurrentAge() {
+    let today = new Date();
+    let birthDate = new Date("2000/08/18");
 
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    if (months < 0 || (months === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+  }
 </script>
 
 <svelte:head>
@@ -25,7 +35,7 @@
   </span>
   {/if}
 </h1>
-<p>I'm a 21 year old aspiring developer that loves working with frontend, backend, UX and design.</p>
+<p>I'm a {getCurrentAge()} year old aspiring developer that loves working with frontend, backend, UX and design.</p>
 <Button class={"first-button"} text={"Get to know me"} variant={"gradient"}/>
 <Button text={"See my work"} variant={"outlined"}/>
 </section>
