@@ -2,11 +2,22 @@
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import Button from '../lib/Button.svelte';
+  import VanillaTilt from 'vanilla-tilt';
 
   let visible = false;
 
+  let jsonDetails;
+
   onMount( () => {
     visible = true;
+
+    VanillaTilt.init(jsonDetails, {
+      startX: 20,
+      glare: true,
+      "max-glare":  0.2,
+      perspective: 800,
+      scale: 1.1
+    })
   })
 
   function getCurrentAge() {
@@ -28,6 +39,7 @@
 </svelte:head>
 
 <section>
+  <div>
 <h1>Hello, my name is
   {#if visible}
   <span transition:fade="{{duration: 700}}">
@@ -38,6 +50,10 @@
 <p>I'm a {getCurrentAge()} year old aspiring developer that loves working with frontend, backend, UX and design.</p>
 <Button class={"first-button"} text={"Get to know me"} variant={"gradient"}/>
 <Button text={"See my work"} variant={"outlined"}/>
+</div>
+<div bind:this={jsonDetails} class="json">
+  <img alt={"details about Aleks as a developer"} src={"./static/carbonStats.png"}/>
+</div>
 </section>
 
 
@@ -45,11 +61,16 @@
 
   * {
     margin: 0;
-    margin-bottom: 1rem;
   }
 
   section {
     margin: 5%; 
+    display: flex;
+    height: 100vh;
+  }
+
+  p {
+    margin-bottom: 1rem;
   }
 
   span {
@@ -69,6 +90,19 @@
   p {
     color: var(--text-color);
     font-size: 18px;
+  }
+
+  .json {
+    margin-left: 10%;
+    margin-top: 5%;
+    padding: 4rem;
+    background: linear-gradient(135deg, #fc00ff , #00dbde);
+    height: fit-content;
+    border-radius: 10px;
+  }
+
+  img {
+    box-shadow: 0 5px 20px 7px rgb(51 51 51 / 90%);
   }
 
   section :global(.first-button) {
