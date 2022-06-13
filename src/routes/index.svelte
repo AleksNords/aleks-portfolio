@@ -16,7 +16,10 @@
       glare: true,
       "max-glare":  0.2,
       perspective: 800,
-      scale: 1.1
+      scale: 1.1,
+      reset: false,
+      "full-page-listening": true,
+      reverse: true
     })
   })
 
