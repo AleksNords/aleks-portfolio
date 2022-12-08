@@ -55,7 +55,7 @@
   </nav>
 
 
-  <!-- TODO: fix this, ThemeSwitch shouldn't be inside the UL!-->
+  <!-- TODO: fix this, ThemeSwitch shouldn't be inside the UL!!-->
 	<ul>
     <li>
       <ThemeSwitch/>
