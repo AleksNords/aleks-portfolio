@@ -1,13 +1,57 @@
-name: "Workflow"
-on:
-  push:
-    branches:
-        - '**'
+name: Svelte CI
+
+on: [push, pull_request]
+
 jobs:
-  build:
-    runs-on: "ubuntu-latest"
+  install:
+    runs-on: self-hosted
     steps:
-      - uses: "actions/checkout@master"
-      - name: "TODO to Issue"
-        uses: "alstr/todo-to-issue-action@v4.6.5"
-        id: "todo"
+      # Checkout the code
+      - uses: actions/checkout@v2
+
+      # Install Svelte and its dependencies
+      - run: yarn install --cwd ~/aleks-portfolio/
+      - uses: actions/upload-artifact@v1
+        with:
+          name: node_modules
+          path: node_modules
+
+  lint:
+    needs: [install]
+    runs-on: self-hosted
+    steps:
+      # Restore the installed dependencies from the previous step
+      - uses: actions/download-artifact@v1
+        with:
+          name: node_modules
+
+      # Run the Svelte linter
+      - run: yarn lint --cwd ~/aleks-portfolio/
+
+  test:
+    needs: [install]
+    runs-on: self-hosted
+    steps:
+      # Restore the installed dependencies from the previous step
+      - uses: actions/download-artifact@v1
+        with:
+          name: node_modules
+
+      # Run the Svelte tests
+      - run: yarn test --cwd ~/aleks-portfolio/
+
+  build:
+    needs: [install]
+    runs-on: self-hosted
+    steps:
+      # Restore the installed dependencies from the previous step
+      - uses: actions/download-artifact@v1
+        with:
+          name: node_modules
+
+      # Build the Svelte app
+      - run: yarn build --cwd ~/aleks-portfolio/
+      - uses: actions/upload-artifact@v1
+        with:
+          name: build
+          path: public
