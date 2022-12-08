@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   install:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       # Checkout the code
       - uses: actions/checkout@v2
