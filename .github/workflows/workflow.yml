@@ -13,7 +13,7 @@ jobs:
         with: 
           node-version: 18.12.1
       - name: Install nvm
-        run: npm install -g nvm
+        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
       - name: Install Node.js
         run: nvm install 18.12.1
       - name: Use Node.js
