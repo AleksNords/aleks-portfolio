@@ -11,8 +11,8 @@ jobs:
 
       # Install Svelte and its dependencies
       - run: | 
-            nvm use 18.12.1 
-            npm install
+            nvm use 18.12.1 --if-present --prefix /home/ubuntu/aleks-portfolio/
+            npm install --if-present --prefix /home/ubuntu/aleks-portfolio/
       - uses: actions/upload-artifact@v1
         with:
           name: node_modules
