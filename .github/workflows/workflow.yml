@@ -35,5 +35,4 @@ jobs:
       # Build and hosts the Svelte app using pm2
       - run: npm run build
       - run: ls
-      - run: pm2 restart ecosystem.config.cjs
-      - run: pm2 save
+      - run: pm2 start build/index.js || pm2 restart 0
