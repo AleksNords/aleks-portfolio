@@ -16,8 +16,10 @@ jobs:
         run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
       - name: Restart shell
         run: source ~/.bashrc
+      - name: Check nvm
+        run: nvm -v
       - name: Install Node.js
-        run: nvm install
+        run: nvm install 18.12.1
       - name: Use Node.js
         run: nvm use 18.12.1
       # Install Svelte and its dependencies
