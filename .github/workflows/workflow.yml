@@ -39,8 +39,7 @@ jobs:
       #  with:
       #    name: node_modules
 
-      - run: npm ci --if-present --prefix /home/ubuntu/aleks-portfolio/
-
+      - run: npm ci
   test:
     needs: [npm-ci]
     runs-on: self-hosted
@@ -51,8 +50,7 @@ jobs:
      #   name: node_modules
 
       # Run the Svelte tests
-      - run: npm test --if-present --prefix /home/ubuntu/aleks-portfolio/
-
+      - run: npm test
   build:
     #needs: [test]
     runs-on: self-hosted
@@ -63,7 +61,7 @@ jobs:
           #name: node_modules
 
       # Build the Svelte app
-      - run: npm run dev -- --host --if-present --prefix /home/ubuntu/aleks-portfolio/
+      - run: npm run dev -- --host
       - uses: actions/upload-artifact@v1
         with:
           name: build
