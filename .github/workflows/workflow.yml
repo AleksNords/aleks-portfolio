@@ -12,6 +12,8 @@ jobs:
         uses: actions/setup-node@v1
         with: 
           node-version: 18.12.1
+      - name: Uninstall old nvm
+        run: npm uninstall -g nvm
       - name: Install nvm
         run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
       - name: Restart shell
