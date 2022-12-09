@@ -16,6 +16,9 @@ jobs:
         run: npm uninstall -g nvm
       - name: Install nvm
         run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
       - name: Restart shell
         run: source ~/.bashrc
       - name: Check nvm
