@@ -30,18 +30,17 @@ jobs:
        #   name: node_modules
        #   path: node_modules
 
-  npm-ci:
-    needs: [install]
-    runs-on: self-hosted
-    steps:
+  #npm-ci:
+    #needs: [install]
+    #runs-on: self-hosted
+    #steps:
       # Restore the installed dependencies from the previous step
       #- uses: actions/download-artifact@v1
       #  with:
       #    name: node_modules
-
-      - run: npm ci
+      #- run: npm ci
   test:
-    needs: [npm-ci]
+    needs: [install]
     runs-on: self-hosted
     steps:
       # Restore the installed dependencies from the previous step
