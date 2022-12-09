@@ -13,7 +13,7 @@ jobs:
         with: 
           node-version: 18.12.1
       - name: Install nvm
-        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
       - name: Rerun shell
         run: source ~/.bashrc
       - name: Check nvm
