@@ -61,4 +61,6 @@ jobs:
 
       # Build the Svelte app
       - run: npm run build
-      - run: pm2 restart build/index.js
+      - run: cd build
+      - run: ls
+      #- run: pm2 restart build/index.js
