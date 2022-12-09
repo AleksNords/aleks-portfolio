@@ -17,7 +17,9 @@ jobs:
       #- name: Rerun shell
       #  run: source ~/.bashrc
       - name: ls
-        run: cd .. && ls
+        run:
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
       - name: Check nvm
         run: nvm -v
       - name: Install Node.js
