@@ -61,8 +61,4 @@ jobs:
 
       # Build the Svelte app
       - run: npm run build
-      - run: ls
-      - uses: actions/upload-artifact@v1
-        with:
-          name: build
-          path: public
+      - run: pm2 restart build/index.js
