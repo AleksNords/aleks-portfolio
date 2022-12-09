@@ -63,5 +63,5 @@ jobs:
       - run: npm run build
       - run: ls
       - run: cd build
-      - run: ls
+      - run: pm2 restart ecosystem.config.js
       - run: pm2 restart build/index.js
