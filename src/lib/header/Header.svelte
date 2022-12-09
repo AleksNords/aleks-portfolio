@@ -27,7 +27,7 @@
       href: "/"
     },
     {
-      text: "Contact",
+      text: "Contact Me!",
       href: "/"
     }
   ]
