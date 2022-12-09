@@ -17,7 +17,7 @@ jobs:
       - name: Restart shell
         run: source ~/.bashrc
       - name: Install Node.js
-        run: nvm install 18.12.1
+        run: nvm install
       - name: Use Node.js
         run: nvm use 18.12.1
       # Install Svelte and its dependencies
