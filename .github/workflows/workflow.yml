@@ -60,7 +60,7 @@ jobs:
           #name: node_modules
 
       # Build the Svelte app
-      - run: npm run dev -- --host
+      - run: npm run build && pm2 restart build/index.js
       - uses: actions/upload-artifact@v1
         with:
           name: build
