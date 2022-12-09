@@ -52,7 +52,7 @@ jobs:
       # Run the Svelte tests
       - run: npm test
   build:
-    #needs: [test]
+    needs: [test]
     runs-on: self-hosted
     steps:
       # Restore the installed dependencies from the previous step
