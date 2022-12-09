@@ -12,10 +12,12 @@ jobs:
         uses: actions/setup-node@v1
         with: 
           node-version: 18.12.1
+      - name: Install nvm
+        run: npm install -g nvm
       - name: Install Node.js
         run: nvm install 18.12.1
       - name: Use Node.js
-        run: nvm use 12.18.3
+        run: nvm use 18.12.1
       # Install Svelte and its dependencies
       - run:  npm install --if-present --prefix /home/ubuntu/aleks-portfolio/
       - uses: actions/upload-artifact@v1
