@@ -7,26 +7,22 @@ jobs:
     runs-on: self-hosted
     steps:
       # Checkout the code
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with: 
-          node-version: 18.12.1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
       #- name: Install nvm
       #  run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
       #- name: Rerun shell
       #  run: source ~/.bashrc
-      - run: |
-          export NVM_DIR="$HOME/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-      - name: Rerun shell
-        run: source ~/.bashrc
-      - name: Check nvm
-        run: nvm -v
-      - name: Install Node.js
-        run: nvm install 18.12.1
-      - name: Use Node.js
-        run: nvm use 18.12.1
+      #- name: Rerun shell
+        #run: source ~/.bashrc
+      #- name: Check nvm
+        #run: nvm -v
+      #- name: Install Node.js
+      #  run: nvm install 18.12.1
+      #- name: Use Node.js
+      #  run: nvm use 18.12.1
       # Install Svelte and its dependencies
       - run:  npm install --if-present --prefix /home/ubuntu/aleks-portfolio/
       - uses: actions/upload-artifact@v1
