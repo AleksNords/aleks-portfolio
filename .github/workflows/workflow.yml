@@ -11,56 +11,27 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      #- name: Install nvm
-      #  run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-      #- name: Rerun shell
-      #  run: source ~/.bashrc
-      #- name: Rerun shell
-        #run: source ~/.bashrc
-      #- name: Check nvm
-        #run: nvm -v
-      #- name: Install Node.js
-      #  run: nvm install 18.12.1
-      #- name: Use Node.js
-      #  run: nvm use 18.12.1
-      # Install Svelte and its dependencies
       - run:  npm install
-      #- uses: actions/upload-artifact@v1
-       # with:
-       #   name: node_modules
-       #   path: node_modules
 
   npm-ci:
     needs: [install]
     runs-on: self-hosted
     steps:
-       #Restore the installed dependencies from the previous step
-      #- uses: actions/download-artifact@v1
-        #with:
-         # name: node_modules
         - run: npm ci
+        
   test:
     needs: [npm-ci]
     runs-on: self-hosted
     steps:
-      # Restore the installed dependencies from the previous step
-      #- uses: actions/download-artifact@v1
-      #  with:
-     #   name: node_modules
 
       # Run the Svelte tests
       - run: npm test
+      
   build:
     needs: [test]
     runs-on: self-hosted
     steps:
-      # Restore the installed dependencies from the previous step
-      #- uses: actions/download-artifact@v1
-        #with:
-          #name: node_modules
 
-      # Build the Svelte app
+      # Build and hosts the Svelte app using pm2
       - run: npm run build
-      - run: ls
-      - run: cd build
-      - run: pm2 start build/index.js
+      - run: pm2 start build/index.js -f
