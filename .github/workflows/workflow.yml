@@ -10,9 +10,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Install Svelte and its dependencies
-      - run: | 
-            nvm use 18.12.1 --if-present --prefix /home/ubuntu/aleks-portfolio/
-            npm install --if-present --prefix /home/ubuntu/aleks-portfolio/
+      - run:  npm install --if-present --prefix /home/ubuntu/aleks-portfolio/
       - uses: actions/upload-artifact@v1
         with:
           name: node_modules
@@ -30,7 +28,7 @@ jobs:
       - run: npm ci --if-present --prefix /home/ubuntu/aleks-portfolio/
 
   test:
-    needs: [install]
+    needs: [npm-ci]
     runs-on: self-hosted
     steps:
       # Restore the installed dependencies from the previous step
@@ -42,7 +40,7 @@ jobs:
       - run: npm test --if-present --prefix /home/ubuntu/aleks-portfolio/
 
   build:
-    needs: [install]
+    needs: [test]
     runs-on: self-hosted
     steps:
       # Restore the installed dependencies from the previous step
