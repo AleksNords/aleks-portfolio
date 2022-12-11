@@ -21,7 +21,7 @@
   </span>
   {/if}
 </h1>
-<p>Hei Philip!!! XdDdD.</p>
+<p>Welcome to my portfolio.</p>
 
 
 <style>
