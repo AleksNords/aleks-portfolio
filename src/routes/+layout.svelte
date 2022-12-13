@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <meta name="color-scheme" content={$theme}/> <link rel="stylesheet" href={`../static/themes/${$theme}.css`} />
+  <meta name="color-scheme" content={$theme}/> <link rel="stylesheet" href={`../themes/${$theme}.css`} />
 </svelte:head>
 
 <Header/>
