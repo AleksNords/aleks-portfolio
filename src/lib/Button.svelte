@@ -9,7 +9,7 @@
 
 <style>
   button {
-    font-family: 'Segoe UI';
+    font-family: 'Segoe UI', 'Open Sans';
     font-size: 1.3rem;
     font-weight: 600;
     height: 3rem;

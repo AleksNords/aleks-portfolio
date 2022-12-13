@@ -104,7 +104,7 @@
 	}
 
   .navigation-link {
-    font-family: 'Segoe UI', Verdana, sans-serif;
+    font-family: 'Segoe UI', 'Open Sans', Verdana, sans-serif;
     font-size: 1.5em;
     font-weight: 400;
     text-decoration: none;
