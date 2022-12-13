@@ -42,6 +42,10 @@ span:before {
   transition: .3s;
 }
 
+input[type="checkbox"]{
+  display: none;
+}
+
 span.moon:before {
   background-image: url("./moon.svg");
 }

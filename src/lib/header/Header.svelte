@@ -133,7 +133,7 @@
 	}
 
 	ul > li {
-		display: inline-block;
+		display: flex;
     margin-right: 10px;
 	}
 </style>
