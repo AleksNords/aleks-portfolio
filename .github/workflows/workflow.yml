@@ -1,13 +1,38 @@
-name: "Workflow"
-on:
-  push:
-    branches:
-        - '**'
+name: Svelte CI
+
+on: [push, pull_request]
+
 jobs:
-  build:
-    runs-on: "ubuntu-latest"
+  install:
+    runs-on: self-hosted
     steps:
-      - uses: "actions/checkout@master"
-      - name: "TODO to Issue"
-        uses: "alstr/todo-to-issue-action@v4.6.5"
-        id: "todo"
+      # Checkout the code
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run:  npm install
+
+  npm-ci:
+    needs: [install]
+    runs-on: self-hosted
+    steps:
+        - run: npm ci
+        
+  test:
+    needs: [npm-ci]
+    runs-on: self-hosted
+    steps:
+
+      # Run the Svelte tests
+      - run: npm test
+      
+  build:
+    needs: [test]
+    runs-on: self-hosted
+    steps:
+
+      # Build and hosts the Svelte app using pm2
+      - run: npm run build
+      - run: pm2 start build/index.js || pm2 restart 0
+      - run: pm2 save

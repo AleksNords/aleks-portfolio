@@ -1,12 +1,9 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		vite: {
-			server: { fs: { allow: ['./static'] } }
-		},
-		adapter: adapter()
+		adapter: adapter({ out: 'build' }),
 	}
 };
 
