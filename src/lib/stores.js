@@ -8,4 +8,3 @@ if (browser){
 }
 
 export const theme = writable(storedTheme ? storedTheme : "dark");
-
