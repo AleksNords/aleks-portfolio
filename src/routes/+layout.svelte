@@ -14,8 +14,11 @@
 
 <svelte:head>
 	<meta name="color-scheme" content={$theme} />
-	<link rel="stylesheet" href={`../themes/${$theme}.css`} /></svelte:head>
-<Header/>
+	<link rel="stylesheet" href={`../themes/${$theme}.css`} />
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet" type="text/css">
+</svelte:head>
+
+<Header />
 
 <main>
 	<slot />

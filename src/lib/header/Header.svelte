@@ -27,12 +27,16 @@
       href: "/"
     },
     {
+      text: "Qualifications",
+      href: "/"
+    },
+    {
       text: "Contact",
       href: "/"
     }
   ]
-    
 
+  
   //TODO: Find more links to include in the header
   //TODO: Center middle links, they are slightly offset to the left
 </script>
@@ -100,7 +104,7 @@
 	}
 
   .navigation-link {
-    font-family: 'Segoe UI', Verdana, sans-serif;
+    font-family: 'Segoe UI', 'Open Sans', Verdana, sans-serif;
     font-size: 1.5em;
     font-weight: 400;
     text-decoration: none;

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+
 @font-face {
   font-family: 'League Spartan';
   src: url('../fonts/LeagueSpartan-Bold.eot');
@@ -11,7 +13,7 @@
 }
 
 :root {
-	font-family: 'Segoe UI', Roboto, sans-serif;
+	font-family: 'Segoe UI', 'Open Sans', Roboto, sans-serif;
 	--pure-white: #ffffff;
   --pitch-black: #000000;
 	--primary-color: #FF5722;

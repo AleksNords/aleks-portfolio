@@ -6,7 +6,7 @@ const config = {
     fs: {
       allow: ['..']
     }
-  }
+	}
 };
 
 export default config;
