@@ -55,7 +55,7 @@
 <Button text={"See my work"} variant={"outlined"}/>
 </div>
 <div bind:this={jsonDetails} class="json">
-  <img alt={"details about Aleks as a developer"} src={"./carbonStats.png"}/>
+  <img alt={"details about Aleks as a developer"} src={"/images/carbonStats.png"}/>
 </div>
 </section>
 
