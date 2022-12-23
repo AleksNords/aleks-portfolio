@@ -14,13 +14,13 @@
     VanillaTilt.init(jsonDetails, {
       startX: 20,
       glare: true,
-      "max-glare":  0.2,
+      "max-glare":  0.1,
       perspective: 800,
       scale: 1.1,
       reset: false,
       "full-page-listening": true,
       reverse: true
-    })
+    });
   })
 
   function getCurrentAge() {
@@ -105,7 +105,8 @@
   }
 
   img {
-    box-shadow: 0 5px 20px 7px rgb(51 51 51 / 90%);
+    transform: translateZ(30px);
+    box-shadow: 0 10px 25px 10px rgb(51 51 51 / 90%);
   }
 
   section :global(.first-button) {
