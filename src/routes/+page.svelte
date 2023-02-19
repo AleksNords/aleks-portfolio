@@ -14,13 +14,13 @@
     VanillaTilt.init(jsonDetails, {
       startX: 20,
       glare: true,
-      "max-glare":  0.2,
+      "max-glare":  0.1,
       perspective: 800,
       scale: 1.1,
       reset: false,
       "full-page-listening": true,
       reverse: true
-    })
+    });
   })
 
   function getCurrentAge() {
@@ -55,7 +55,7 @@
 <Button text={"See my work"} variant={"outlined"}/>
 </div>
 <div bind:this={jsonDetails} class="json">
-  <img alt={"details about Aleks as a developer"} src={"./carbonStats.png"}/>
+  <img alt={"details about Aleks as a developer"} src={"/images/carbonStats.png"}/>
 </div>
 </section>
 
@@ -81,13 +81,14 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    padding-left: 1%;
   }
 
   h1 {
     font-family: 'League Spartan';
     font-weight: bold;
     color: var(--bold-text-color);
-    font-size: 4em;
+    font-size: 3vw;
   }
 
   p {
@@ -105,7 +106,8 @@
   }
 
   img {
-    box-shadow: 0 5px 20px 7px rgb(51 51 51 / 90%);
+    transform: translateZ(30px);
+    box-shadow: 0 10px 25px 10px rgb(51 51 51 / 90%);
   }
 
   section :global(.first-button) {

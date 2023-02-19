@@ -60,7 +60,7 @@
 
 
   <!-- TODO: fix this, ThemeSwitch shouldn't be inside the UL!!-->
-	<ul>
+	<ul class="social-links">
     <li>
       <ThemeSwitch/>
     </li>
@@ -121,8 +121,11 @@
   }
 
   .navigation-links-list {
-    justify-self: center;
     height: 100%;
+    /* centering to screen instead of parent */
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 
 	ul {
@@ -132,8 +135,9 @@
     align-items: center;
 	}
 
-	ul > li {
-		display: inline-block;
+	.social-links > li {
+		display: flex;
     margin-right: 10px;
 	}
+
 </style>
