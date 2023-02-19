@@ -10,10 +10,10 @@
 <style>
   button {
     font-family: 'Segoe UI', 'Open Sans';
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 600;
-    height: 3rem;
-    padding: 0 1rem;
+    height: 2.5rem;
+    padding: 0 .75rem;
     outline: none;
     border: none;
     border-radius: 7px;

@@ -15,7 +15,7 @@
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 2em;
+  height: 1.55rem;
 }
 
 span {
@@ -27,17 +27,19 @@ span {
   right: 0;
   bottom: 0;
   background-color: var(--light-primary-color);
+  box-shadow: -5px 5px 15px -7px var(--accent-color),
+              inset 5px -5px 12px -9px #FF9800;
   -webkit-transition: .3s;
-  transition: .3s;
+  transition: all .3s;
 }
 
 span:before {
   position: absolute;
   content: "";
-  height: 1.6em;
-  width: 1.6em;
+  height: 1.25em;
+  width: 1.25em;
   left: 4px;
-  bottom: 3px;
+  bottom: 4px;
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -56,6 +58,8 @@ span.sun:before {
 
 input:checked + span {
   background-color: var(--pitch-black);
+  box-shadow: 5px -5px 15px -7px #3962CB,
+              inset -7px 7px 10px -8px #3962CB;
 }
 
 input:checked + span:before {

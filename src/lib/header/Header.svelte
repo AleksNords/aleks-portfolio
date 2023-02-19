@@ -23,11 +23,11 @@
       href: "/"
     },
     {
-      text: "Projects",
+      text: "Qualifications",
       href: "/"
     },
     {
-      text: "Qualifications",
+      text: "Projects",
       href: "/"
     },
     {
@@ -60,7 +60,7 @@
 
 
   <!-- TODO: fix this, ThemeSwitch shouldn't be inside the UL!!-->
-	<ul>
+	<ul class="social-links">
     <li>
       <ThemeSwitch/>
     </li>
@@ -74,6 +74,7 @@
 
 <style>
 
+
 	* {
 		margin: 0;
 	}
@@ -86,8 +87,8 @@
 	}
 
 	.corner-logo {
-		width: 4em;
-		height: 4em;
+		width: 3.5rem;
+		height: 3.5rem;
 	}
 
 	.corner-logo a {
@@ -99,21 +100,22 @@
 	}
 
 	.corner-logo img {
-		width: 3em;
-		height: 3em;
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 
   .navigation-link {
     font-family: 'Segoe UI', 'Open Sans', Verdana, sans-serif;
-    font-size: 1.5em;
+    font-size: 1.2rem;
     font-weight: 400;
     text-decoration: none;
     color: var(--accent-color);
-    transition: color ease-in-out 0.15s;
+    transition: all ease-in-out .25s;
   }
 
   .navigation-link:hover {
     color: var(--primary-color);
+    text-shadow: 0 0 50px var(--primary-color);
   }
 
   .navigation-links-list > li:not(:last-child) {
@@ -121,8 +123,11 @@
   }
 
   .navigation-links-list {
-    justify-self: center;
     height: 100%;
+    /* centering to screen instead of parent */
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 
 	ul {
@@ -132,8 +137,9 @@
     align-items: center;
 	}
 
-	ul > li {
+	.social-links > li {
 		display: flex;
     margin-right: 10px;
 	}
+
 </style>

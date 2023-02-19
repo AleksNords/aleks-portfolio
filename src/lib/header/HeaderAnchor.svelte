@@ -11,8 +11,8 @@
 
 <style>
   a {
-    width: 2em;
-    height: 2em;
+    width: 1.7rem;
+    height: 1.7rem;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -12,6 +12,10 @@
   font-style: normal;
 }
 
+html {
+  font-size: calc(15px + 0.390625vw);
+}
+
 :root {
 	font-family: 'Segoe UI', 'Open Sans', Roboto, sans-serif;
 	--pure-white: #ffffff;

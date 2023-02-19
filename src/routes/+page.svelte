@@ -81,13 +81,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    /* Fixes clipping issue on span */
+    padding-left: 1%;
   }
 
   h1 {
     font-family: 'League Spartan';
     font-weight: bold;
     color: var(--bold-text-color);
-    font-size: 4em;
+    font-size: 2.3rem;
   }
 
   p {
