@@ -58,8 +58,8 @@ span.sun:before {
 
 input:checked + span {
   background-color: var(--pitch-black);
-  box-shadow: 5px -5px 15px -7px #3962CB,
-              inset -7px 7px 10px -8px #3962CB;
+  box-shadow: 4px -4px 15px -7px #3962CB,
+              inset -6px 6px 8px -8px #3962CB;
 }
 
 input:checked + span:before {

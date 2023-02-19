@@ -41,8 +41,9 @@
 	<meta name="description" content="Aleks Nordstrand portfolio" />
 </svelte:head>
 
-<section>
-  <div>
+<main>
+<section id="home">
+  <div id="text-introduction">
 <h1>Hello, my name is
   {#if visible}
   <span transition:fade="{{duration: 700}}">
@@ -54,11 +55,17 @@
 <Button class={"first-button"} text={"Get to know me"} variant={"gradient"}/>
 <Button text={"See my work"} variant={"outlined"}/>
 </div>
-<div bind:this={jsonDetails} class="json">
-  <img alt={"details about Aleks as a developer"} src={"/images/carbonStats.png"}/>
+<div id="json-parent">
+  <div bind:this={jsonDetails} class="json">
+    <img alt={"details about Aleks as a developer"} src={"/images/carbonStats.png"}/>
+  </div>
 </div>
 </section>
 
+<section id="about">
+
+</section>
+</main>
 
 <style>
 
@@ -66,11 +73,30 @@
     margin: 0;
   }
 
-  section {
+  main {
     margin: 5%; 
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  main::-webkit-scrollbar {
+  display: none;
+  }
+
+  section {
     display: flex;
     height: 100vh;
+    width: 100%;
   }
+
+  main section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
 
   p {
     margin-bottom: 1rem;
@@ -97,12 +123,23 @@
     font-size: 18px;
   }
 
+  #text-introduction {
+    max-width: 50%;
+  }
+
+  #json-parent {
+    flex-grow: 100;
+    display: flex;
+    justify-content: center;
+  }
+
   .json {
-    margin-left: 10%;
-    margin-top: 5%;
-    padding: 4rem;
+    margin: 5% 0 0 5%;
+    right: 2.5rem;
+    padding: 2.5rem;
     background: linear-gradient(135deg, #fc00ff , #00dbde);
     height: fit-content;
+    max-width: 20rem;
     border-radius: 10px;
   }
 
