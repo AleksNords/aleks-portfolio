@@ -22,19 +22,22 @@
 
   button.gradient {
     color: var(--pure-white);
-    background-image: linear-gradient(60deg, var(--primary-color) 3%, var(--accent-color) 97%);
+    background-image: linear-gradient(60deg, var(--primary-color) 10%, var(--accent-color) 90%);
     border: 0;
+    background-size: 100%;
+    transition: background-size ease-in-out 0.15s;
   }
 
   button.outlined {
     background-color: transparent;
     border: 2px solid var(--accent-color);
     color: var(--accent-color);
-    transition: border-color ease-in-out 0.15s;
+    transition: all ease-in-out 0.15s;
   }
 
   button.outlined:hover {
     border-color: var(--primary-color);
+    color: var(--primary-color);
   }
 
   button:hover {
