@@ -7,6 +7,8 @@
 	let visible = false;
 
 	let jsonDetails;
+	let sections;
+	let aboutSection;
 
 	onMount(() => {
 		visible = true;
@@ -34,6 +36,12 @@
 		}
 		return age;
 	}
+
+	function scrollAbout() {
+		console.log('smoge');
+		sections.scrollTo({top: 900, left: 0, behavior: "smooth"});
+		//aboutSection.scrollIntoView({behavior: "smooth"});
+	}
 </script>
 
 <svelte:head>
@@ -41,7 +49,7 @@
 	<meta name="description" content="Aleks Nordstrand portfolio" />
 </svelte:head>
 
-<main>
+<main bind:this={sections}>
 	<section id="home">
 		<div id="text-introduction">
 			<h1>
@@ -54,7 +62,7 @@
 				I'm a {getCurrentAge()} year old developer that loves working with frontend, backend,
 				UX and design.
 			</p>
-			<Button class={'first-button'} text={'Get to know me'} variant={'gradient'} />
+			<Button onClick={scrollAbout} class={'first-button'} text={'Get to know me'} variant={'gradient'} />
 			<Button text={'See my work'} variant={'outlined'} />
 		</div>
 		<div id="json-parent">
@@ -68,7 +76,7 @@
 		</div>
 	</section>
 
-	<section id="about">
+	<section bind:this={aboutSection} id="about">
 		<div class="right-side-header">
 			<h1 class="section-header">About Me</h1>
 		</div>

@@ -1,11 +1,12 @@
 <script>
   export let text;
   export let variant;
+  export let onClick;
 
   let classes = variant + " " + $$props.class;
 </script>
 
-<button class={classes}>{text}</button>
+<button on:click={onClick} class={classes}>{text}</button>
 
 <style>
   button {
