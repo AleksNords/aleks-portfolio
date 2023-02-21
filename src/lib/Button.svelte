@@ -26,7 +26,7 @@
     background-image: linear-gradient(60deg, var(--primary-color) 10%, var(--accent-color) 90%);
     border: 0;
     background-size: 100%;
-    transition: background-size ease-in-out 0.15s;
+    transition: all ease-in-out 0.15s;
   }
 
   button.outlined {
@@ -44,6 +44,7 @@
   button:hover {
     background-size: 200%;
     cursor: pointer;
+    box-shadow: 0 0 10px 1px var(--primary-color);
   }
 
   button:active {

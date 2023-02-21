@@ -39,7 +39,7 @@
 
 	function scrollAbout() {
 		console.log('smoge');
-		sections.scrollTo({top: 900, left: 0, behavior: "smooth"});
+		sections.scrollTo({top: 900, left: 0, behavior: smooth});
 		//aboutSection.scrollIntoView({behavior: "smooth"});
 	}
 </script>
@@ -104,6 +104,7 @@
 		scroll-snap-type: y mandatory;
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
+		overflow-y: visible;
 	}
 
 	main::-webkit-scrollbar {
@@ -173,6 +174,7 @@
 
 	section :global(.first-button) {
 		margin-right: 1rem;
+		position: relative;
 	}
 
 	.right-side-header {
